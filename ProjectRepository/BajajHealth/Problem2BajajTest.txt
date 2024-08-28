@@ -1,0 +1,114 @@
+Test Case 1: Successful Account
+
+{
+    "firstName": "Swaraj",
+    "lastName": "Balinge",
+    "phoneNumber": 7218133865,
+    "emailId": "balingeswaraj@gmail.com"
+}
+Expected Response: successfully created.
+ 
+Test Case 2: Missing Roll Number Header
+
+{
+    "firstName": "Swaraj",
+    "lastName": "Balinge",
+    "phoneNumber": 1234567890,
+    "emailId": "swaraj.Balinge@example.com"
+}
+
+Test Case 3: Missing Required Fields in Request Body
+
+{
+    "lastName": "Balinge",
+    "phoneNumber": 1234567890,
+    "emailId": "swaraj.Balinge@example.com"
+}
+
+Test Case 4: Duplicate Phone Number
+{
+    "firstName": "Swaraj",
+    "lastName": "Balinge",
+    "phoneNumber": 1234567890,
+    "emailId": "Swaraj.Balinge@example.com"
+}
+
+Test Case 5: Duplicate Email ID
+
+{
+    "firstName": "Swaraj",
+    "lastName": "Balinge",
+    "phoneNumber": 9876543210,
+    "emailId": "Swaraj.Balinge@example.com"
+}
+
+Test Case 6: Invalid Phone Number Format
+
+{
+    "firstName": "Swaraj",
+    "lastName": "Balinge",
+    "phoneNumber": "not-a-number",
+    "emailId": "david.lee@example.com"
+}
+Expected Response: 400 Bad Request
+
+Test Case 7: Invalid Email ID Format
+
+{
+    "firstName": "Swaraj",
+    "lastName": "Balinge",
+    "phoneNumber": 1231231234,
+    "emailId": "invalid-email"
+}
+Expected Response: 400 Bad Request
+
+Test Case 8: Very Long Input Values
+
+{
+    "firstName": "A" * 256,
+    "lastName": "B" * 256,
+    "phoneNumber": 1231231234,
+    "emailId": "swaraj.Balingelong.email@example.com"
+}
+Expected Response: 400 Bad Request (or appropriate error)
+
+Test Case 9: Boundary Values for Phone Number and Email ID
+
+{
+    "firstName": "Swaraj",
+    "lastName": "Balinge",
+    "phoneNumber": 0000000000,
+    "emailId": "swaraj.Balinge@example.com"
+}
+Expected Response: 201 Created or appropriate error if boundaries are not accepted
+
+Test Case 10: Check Response Time
+
+{
+    "firstName": "Swaraj",
+    "lastName": "Balinge",
+    "phoneNumber": 1234567890,
+    "emailId": "tim.cook@example.com"
+}
+Expected Response: Time within acceptable limits (depending on performance requirements)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
